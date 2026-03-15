@@ -34,7 +34,7 @@ const GRID_BY_NAME: Record<string, GridItem> = Object.values(GRID).reduce((acc, 
     return acc;
 }, {} as Record<string, GridItem>);
 
-const NINE_GRID = ["留連", "大安", "桃花", "速喜", "空亡", "小吉", "病符", "赤口", "天德"];
+const NINE_GRID = ["大安", "留連", "桃花", "速喜", "空亡", "小吉", "病符", "赤口", "天德"];
 const BASE_SIX = ["大安", "留連", "速喜", "赤口", "小吉", "空亡"];
 
 /**

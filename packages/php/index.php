@@ -24,7 +24,7 @@ foreach ($grid as $item) {
     $gridByName[$item['name']] = $item;
 }
 
-$nineGrid = ['留連', '大安', '桃花', '速喜', '空亡', '小吉', '病符', '赤口', '天德'];
+$nineGrid = ['大安', '留連', '桃花', '速喜', '空亡', '小吉', '病符', '赤口', '天德'];
 $baseSix = ['大安', '留連', '速喜', '赤口', '小吉', '空亡'];
 
 $path = $_SERVER['PATH_INFO'] ?? '/';
