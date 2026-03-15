@@ -59,10 +59,12 @@ class XiaoLiuRen {
         const startIdx = n1 - 1;
         const start = NINE_GRID[startIdx];
         
-        const step2Idx = (startIdx + n2) % 9;
+        let step2Idx = (startIdx + n2 - 1) % 9;
+        if (step2Idx < 0) step2Idx += 9;
         const step2 = NINE_GRID[step2Idx];
         
-        const finalIdx = (step2Idx + n3) % 9;
+        let finalIdx = (step2Idx + n3 - 1) % 9;
+        if (finalIdx < 0) finalIdx += 9;
         const final = NINE_GRID[finalIdx];
         
         const info = GRID_BY_NAME[final];
@@ -100,7 +102,8 @@ class XiaoLiuRen {
         validateNumber(day, 'day', 1, 30);
         validateNumber(hour, 'hour', 1, 12);
 
-        const idx = (month + day + hour - 2) % 6;
+        let idx = (month + day + hour - 3) % 6;
+        if (idx < 0) idx += 6;
         const result = BASE_SIX[idx];
         const info = GRID_BY_NAME[result];
         

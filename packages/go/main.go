@@ -118,9 +118,15 @@ func handler(w http.ResponseWriter, r *http.Request) {
 func divine(n1, n2, n3 int) map[string]interface{} {
 	startIdx := n1 - 1
 	start := nineGrid[startIdx]
-	step2Idx := (startIdx + n2) % 9
+	step2Idx := (startIdx + n2 - 1) % 9
+	if step2Idx < 0 {
+		step2Idx += 9
+	}
 	step2 := nineGrid[step2Idx]
-	finalIdx := (step2Idx + n3) % 9
+	finalIdx := (step2Idx + n3 - 1) % 9
+	if finalIdx < 0 {
+		finalIdx += 9
+	}
 	final := nineGrid[finalIdx]
 	
 	info := gridByName[final]
@@ -150,7 +156,10 @@ func divine(n1, n2, n3 int) map[string]interface{} {
 }
 
 func divineByTime(month, day, hour int) map[string]interface{} {
-	idx := (month + day + hour - 2) % 6
+	idx := (month + day + hour - 3) % 6
+	if idx < 0 {
+		idx += 6
+	}
 	result := baseSix[idx]
 	
 	// 使用映射快速查找

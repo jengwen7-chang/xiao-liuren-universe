@@ -74,11 +74,11 @@ class XiaoLiuRen:
         start = self.NINE_GRID[start_idx]
         
         # Step 2: 從起點數 n2 步
-        step2_idx = (start_idx + n2) % 9
+        step2_idx = (start_idx + n2 - 1) % 9
         step2 = self.NINE_GRID[step2_idx]
         
         # Step 3: 從中點數 n3 步
-        final_idx = (step2_idx + n3) % 9
+        final_idx = (step2_idx + n3 - 1) % 9
         final = self.NINE_GRID[final_idx]
         
         return self._build_result(final, f"{n1} → {n2} → {n3}", start, step2)
@@ -93,7 +93,7 @@ class XiaoLiuRen:
         # 輸入驗證
         self._validate_time_params(month, day, hour)
         
-        idx = (month + day + hour - 2) % 6
+        idx = (month + day + hour - 3) % 6
         result = self.BASE_SIX[idx]
         return self._build_result(result, f"月={month}, 日={day}, 時={hour}")
     
