@@ -30,7 +30,7 @@ var gridByName = func() map[string]map[string]string {
 	return m
 }()
 
-var nineGrid = []string{"大安", "留連", "桃花", "速喜", "空亡", "小吉", "病符", "赤口", "天德"}
+var nineGrid = []string{"大安", "留連", "速喜", "赤口", "小吉", "空亡", "病符", "桃花", "天德"}
 var baseSix = []string{"大安", "留連", "速喜", "赤口", "小吉", "空亡"}
 
 // 驗證數字是否在有效範圍內
