@@ -1,0 +1,16 @@
+{
+  "name": "xiao-liuren",
+  "version": "1.0.0",
+  "description": "小六壬預測系統 - Chinese traditional divination tool",
+  "main": "xiao_liu_ren.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["divination", "易經", "占卜", "小六壬"],
+  "author": "Alex Family",
+  "license": "MIT",
+  "dependencies": {
+    "fastify": "^4.25.0"
+  }
+}
