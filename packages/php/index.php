@@ -46,9 +46,11 @@ function divine($n1, $n2, $n3, $gridByName, $nineGrid) {
 
     $startIdx = $n1 - 1;
     $start = $nineGrid[$startIdx];
-    $step2Idx = ($startIdx + $n2) % 9;
+    $step2Idx = ($startIdx + $n2 - 1) % 9;
+    if ($step2Idx < 0) $step2Idx += 9;
     $step2 = $nineGrid[$step2Idx];
-    $finalIdx = ($step2Idx + $n3) % 9;
+    $finalIdx = ($step2Idx + $n3 - 1) % 9;
+    if ($finalIdx < 0) $finalIdx += 9;
     $final = $nineGrid[$finalIdx];
     $info = $gridByName[$final];
     
@@ -82,7 +84,8 @@ function divineByTime($month, $day, $hour, $baseSix, $gridByName) {
     validateNumber($day, 'day', 1, 30);
     validateNumber($hour, 'hour', 1, 12);
 
-    $idx = ($month + $day + $hour - 2) % 6;
+    $idx = ($month + $day + $hour - 3) % 6;
+    if ($idx < 0) $idx += 6;
     $result = $baseSix[$idx];
     $info = $gridByName[$result];
     
@@ -115,7 +118,7 @@ function random($gridByName, $nineGrid) {
 
 // 路由
 try {
-    if ($path === '/divine' || $path === '/divine/') {
+    if (strpos($path, '/divine') === 0) {
         if (!isset($_GET['n1']) || !isset($_GET['n2']) || !isset($_GET['n3'])) {
             echo json_encode(['error' => '請提供 n1, n2, n3 (1-9 的整數)'], JSON_UNESCAPED_UNICODE);
             exit;
@@ -124,7 +127,7 @@ try {
         $n2 = (int)$_GET['n2'];
         $n3 = (int)$_GET['n3'];
         echo json_encode(divine($n1, $n2, $n3, $gridByName, $nineGrid), JSON_UNESCAPED_UNICODE);
-    } elseif ($path === '/time' || $path === '/time/') {
+    } elseif (strpos($path, '/time') === 0) {
         if (!isset($_GET['month']) || !isset($_GET['day']) || !isset($_GET['hour'])) {
             echo json_encode(['error' => '請提供 month (1-12), day (1-30), hour (1-12)'], JSON_UNESCAPED_UNICODE);
             exit;
