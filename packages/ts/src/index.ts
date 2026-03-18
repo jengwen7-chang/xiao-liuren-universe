@@ -17,15 +17,12 @@ interface GridItem {
 }
 
 const GRID: Record<number, GridItem> = {
-    1: { name: "留連", 五行: "水", 方位: "西南", 特質: "停止，反復", 神煞: "玄武", 意義: "延宕", 尋物: "東西藏在某處，需要耐心找", 辦事求職: "事情會卡住", 感情人際: "難以割捨", 疾病身體: "需要長期調養" },
-    2: { name: "大安", 五行: "木", 方位: "正東", 特質: "長期、緩慢、穩定", 神煞: "青龍", 意義: "吉利", 尋物: "東西就在家裡", 辦事求職: "順利穩定", 感情人際: "感情穩定", 疾病身體: "身體無大礙" },
-    3: { name: "桃花", 五行: "土", 方位: "東北", 特質: "欲望、牽絆、異性", 神煞: "紅鸞", 意義: "感情", 尋物: "東西藏在熱鬧場所", 辦事求職: "靠人脈關係", 感情人際: "有戀情機會", 疾病身體: "注意泌尿系統" },
-    4: { name: "速喜", 五行: "火", 方位: "正南", 特質: "驚喜、快速、突然", 神煞: "朱雀", 意義: "喜慶", 尋物: "很快就會找到", 辦事求職: "會非常快得到好消息", 感情人際: "彼此有火花", 疾病身體: "康復快速" },
-    5: { name: "空亡", 五行: "土", 方位: "內", 特質: "失去、虛偽、空想", 神煞: "勾陳", 意義: "虛驚", 尋物: "東西找不到了", 辦事求職: "一場空", 感情人際: "對方心意不明", 疾病身體: "需要多注意" },
-    6: { name: "小吉", 五行: "水", 方位: "正北", 特質: "起步、不多、尚可", 神煞: "六合", 意義: "貴人", 尋物: "會有貴人幫你找到", 辦事求職: "有貴人相助", 感情人際: "有好的發展機會", 疾病身體: "逐漸好轉" },
-    7: { name: "病符", 五行: "金", 方位: "西南", 特質: "病態異常、治療", 神煞: "凶煞", 意義: "疾病", 尋物: "東西可能在醫療院所", 辦事求職: "身體不適", 感情人際: "對方身體有恙", 疾病身體: "需要看醫生" },
-    8: { name: "赤口", 五行: "金", 方位: "正西", 特質: "吵架、打架、鬥爭", 神煞: "白虎", 意義: "口舌糾紛", 尋物: "可能已經遺失", 辦事求職: "容易有口舌是非", 感情人際: "容易吵架", 疾病身體: "可能需要動刀" },
-    9: { name: "天德", 五行: "金", 方位: "西北", 特質: "貴人、上司、高遠", 神煞: "天德貴人", 意義: "吉祥", 尋物: "有貴人幫忙找回", 辦事求職: "紫微降臨，求人辦事", 感情人際: "有長輩撮合", 疾病身體: "有福報" }
+    1: { name: "大安", 五行: "木", 方位: "正東", 特質: "長期、緩慢、穩定", 神煞: "青龍", 意義: "吉利", 尋物: "東西就在家裡", 辦事求職: "順利穩定", 感情人際: "感情穩定", 疾病身體: "身體無大礙" },
+    2: { name: "留連", 五行: "水", 方位: "西南", 特質: "停止，反復", 神煞: "玄武", 意義: "延宕", 尋物: "東西藏在某處，需要耐心找", 辦事求職: "事情會卡住", 感情人際: "難以割捨", 疾病身體: "需要長期調養" },
+    3: { name: "速喜", 五行: "火", 方位: "正南", 特質: "驚喜、快速、突然", 神煞: "朱雀", 意義: "喜慶", 尋物: "很快就會找到", 辦事求職: "會非常快得到好消息", 感情人際: "彼此有火花", 疾病身體: "康復快速" },
+    4: { name: "赤口", 五行: "金", 方位: "正西", 特質: "吵架、打架、鬥爭", 神煞: "白虎", 意義: "口舌糾紛", 尋物: "可能已經遺失", 辦事求職: "容易有口舌是非", 感情人際: "容易吵架", 疾病身體: "可能需要動刀" },
+    5: { name: "小吉", 五行: "木", 方位: "正北", 特質: "起步、不多、尚可", 神煞: "六合", 意義: "貴人", 尋物: "會有貴人幫你找到", 辦事求職: "有貴人相助", 感情人際: "有好的發展機會", 疾病身體: "逐漸好轉" },
+    6: { name: "空亡", 五行: "土", 方位: "內", 特質: "失去、虛偽、空想", 神煞: "勾陳", 意義: "虛驚", 尋物: "東西找不到了", 辦事求職: "一場空", 感情人際: "對方心意不明", 疾病身體: "需要多注意" }
 };
 
 // 建立 name -> GRID 的映射以提高查找效率
@@ -34,13 +31,12 @@ const GRID_BY_NAME: Record<string, GridItem> = Object.values(GRID).reduce((acc, 
     return acc;
 }, {} as Record<string, GridItem>);
 
-const NINE_GRID = ["大安", "留連", "速喜", "赤口", "小吉", "空亡", "病符", "桃花", "天德"];
 const BASE_SIX = ["大安", "留連", "速喜", "赤口", "小吉", "空亡"];
 
 /**
  * 驗證數字是否在有效範圍內
  */
-function validateNumber(n: number, name: string, min: number = 1, max: number = 9): void {
+function validateNumber(n: number, name: string, min: number = 1, max: number = 999): void {
     if (typeof n !== 'number' || !Number.isInteger(n) || n < min || n > max) {
         throw new Error(`${name} 必須是 ${min}-${max} 的整數`);
     }
@@ -56,16 +52,16 @@ class XiaoLiuRen {
         validateNumber(n2, 'n2');
         validateNumber(n3, 'n3');
 
-        const startIdx = n1 - 1;
-        const start = NINE_GRID[startIdx];
+        const startIdx = (n1 - 1) % 6;
+        const start = BASE_SIX[startIdx];
         
-        let step2Idx = (startIdx + n2 - 1) % 9;
-        if (step2Idx < 0) step2Idx += 9;
-        const step2 = NINE_GRID[step2Idx];
+        let step2Idx = (startIdx + n2 - 1) % 6;
+        if (step2Idx < 0) step2Idx += 6;
+        const step2 = BASE_SIX[step2Idx];
         
-        let finalIdx = (step2Idx + n3 - 1) % 9;
-        if (finalIdx < 0) finalIdx += 9;
-        const final = NINE_GRID[finalIdx];
+        let finalIdx = (step2Idx + n3 - 1) % 6;
+        if (finalIdx < 0) finalIdx += 6;
+        const final = BASE_SIX[finalIdx];
         
         const info = GRID_BY_NAME[final];
         
@@ -131,14 +127,14 @@ class XiaoLiuRen {
      * 隨機一卦
      */
     random(): object {
-        const n1 = Math.floor(Math.random() * 9) + 1;
-        const n2 = Math.floor(Math.random() * 9) + 1;
-        const n3 = Math.floor(Math.random() * 9) + 1;
+        const n1 = Math.floor(Math.random() * 6) + 1;
+        const n2 = Math.floor(Math.random() * 6) + 1;
+        const n3 = Math.floor(Math.random() * 6) + 1;
         return this.divine(n1, n2, n3);
     }
 }
 
-export { XiaoLiuRen, GRID, NINE_GRID, BASE_SIX };
+export { XiaoLiuRen, GRID, BASE_SIX };
 
 // Fastify server
 import Fastify from 'fastify';
