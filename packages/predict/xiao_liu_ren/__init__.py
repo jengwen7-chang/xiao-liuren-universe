@@ -7,7 +7,7 @@
 import sys
 import os
 
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "shared"))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "..", "shared"))
 from data import GRID, NINE_GRID, BASE_SIX
 
 __version__ = "1.2.0"

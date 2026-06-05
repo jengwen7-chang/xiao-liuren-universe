@@ -11,7 +11,7 @@ const diviner = new XiaoLiuRen();
 // 根路由
 fastify.get('/', async (request, reply) => {
     return {
-        message: '小六壬 API v1.0.0',
+        message: '小六壬 API v1.2.0',
         endpoints: [
             '/divine?n1=1&n2=7&n3=5 - 三數起卦',
             '/time?month=1&day=17&hour=1 - 時間起卜',

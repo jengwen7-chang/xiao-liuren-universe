@@ -3,7 +3,7 @@
  * TypeScript 版本
  */
 
-import { divine as coreDivine, divineByTime as coreDivineByTime, random as coreRandom, GRID, NINE_GRID, BASE_SIX } from '../core/divine';
+import { divine as coreDivine, divineByTime as coreDivineByTime, random as coreRandom, GRID, NINE_GRID, BASE_SIX } from '../../core/divine';
 
 interface GridItem {
     name: string;

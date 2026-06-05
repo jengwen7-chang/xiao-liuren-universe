@@ -1,6 +1,6 @@
 {
   "name": "xiao-liuren",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "小六壬預測系統 - Chinese traditional divination tool",
   "main": "xiao_liu_ren.js",
   "scripts": {

@@ -6,13 +6,13 @@ FastAPI 服務器 - 小六壬預測系統
 from fastapi import FastAPI, Query
 from xiao_liu_ren import XiaoLiuRen
 
-app = FastAPI(title="小六壬 API", version="1.0.0")
+app = FastAPI(title="小六壬 API", version="1.2.0")
 diviner = XiaoLiuRen()
 
 @app.get("/")
 def root():
     return {
-        "message": "小六壬 API v1.0",
+        "message": "小六壬 API v1.2.0",
         "endpoints": [
             "/divine?n1=1&n2=7&n3=5 - 三數起卦",
             "/time?month=1&day=17&hour=1 - 時間起卜",

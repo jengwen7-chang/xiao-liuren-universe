@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="xiao-liuren-predict",
-    version="1.0.0",
+    version="1.2.0",
     description="小六壬預測系統 - Chinese traditional divination tool",
     author="Alex Family",
     packages=find_packages(),

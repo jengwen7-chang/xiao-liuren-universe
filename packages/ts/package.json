@@ -1,11 +1,11 @@
 {
   "name": "xiao-liuren-ts",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "小六壬預測系統 - TypeScript 版本",
   "main": "dist/index.js",
   "scripts": {
     "dev": "npx ts-node src/index.ts",
-    "build": "npx tsc",
+    "build": "npx tsc src/index.ts --outDir dist --module commonjs --target es2020 --esModuleInterop --moduleResolution node --resolveJsonModule --skipLibCheck",
     "start": "node dist/index.js"
   },
   "dependencies": {
